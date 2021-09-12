@@ -62,7 +62,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import android.widget.Toast;
 
-import com.android.internal.util.omni.DeviceKeyHandler;
+import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 
 import static com.moto.actions.Constants.*;
@@ -374,7 +374,7 @@ public class KeyHandler implements DeviceKeyHandler {
         return getSystemSetting(mContext, FP_HAPTIC_KEY) == 1;
     }
 
-    public boolean handleKeyEvent(KeyEvent event) {
+    public KeyEvent handleKeyEvent(KeyEvent event) {
         int scanCode = event.getScanCode();
 
         if (DEBUG) {
@@ -390,7 +390,7 @@ public class KeyHandler implements DeviceKeyHandler {
         boolean isAssistantCode = scanCode == ASSISTANT_SCANCODE;
         Log.d(TAG, "isAssistantCode " + isAssistantCode);
         if (!isFPScanCode && !isAssistantCode) {
-            return false;
+            return event;
         }
 
         boolean isFPGestureEnabled = getSystemSetting(mContext, FP_HOME_KEY) == 1;
@@ -400,21 +400,21 @@ public class KeyHandler implements DeviceKeyHandler {
 
         // We only want ACTION_UP event
         if (event.getAction() != KeyEvent.ACTION_UP) {
-            return true;
+            return null;
         } else if (isFPScanCode) {
             if (!isScreenOn && isFPGestureEnabledOnScreenOff
                 || isScreenOn && isFPGestureEnabled) {
-                return processFPScancode(scanCode, isScreenOn);
+                return processFPScancode(scanCode, isScreenOn) ? null : event;
             } else {
-                return false;
+                return event;
             }
         }
 
         if (isAssistantCode) {
-            return processFPScancode(scanCode, true);
+            return processFPScancode(scanCode, true) ? null : event;
         }
 
-        return false;
+        return null;
     }
 
     public boolean canHandleKeyEvent(KeyEvent event) {
