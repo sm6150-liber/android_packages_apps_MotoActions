@@ -414,7 +414,7 @@ public class KeyHandler implements DeviceKeyHandler {
             return processFPScancode(scanCode, true) ? null : event;
         }
 
-        return null;
+        return event;
     }
 
     public boolean canHandleKeyEvent(KeyEvent event) {
