@@ -28,6 +28,11 @@
         android:persistent="true">
 
         <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:replace="android:authorities"/>
+
+        <provider
             android:name=".MotoActionsSearchIndexablesProvider"
             android:authorities="com.moto.actions"
             android:multiprocess="false"
