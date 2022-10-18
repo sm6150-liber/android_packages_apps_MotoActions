@@ -96,4 +96,8 @@
    <!-- Proximity sensor -->
    <string name="allow_proximity_sensor_title">Habilitar o sensor de proximidade</string>
    <string name="allow_proximity_sensor_summary">Verificar o sensor de proximidade antes de executar a ação</string>
+
+   <!-- Assistant Button -->
+   <string name="assistant_button_action">Botão do assistente</string>
+
 </resources>
