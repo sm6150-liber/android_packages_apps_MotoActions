@@ -19,7 +19,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_RESOURCE_DIR := \
-    $(LOCAL_PATH)/res
+    $(LOCAL_PATH)/res \
+    $(TOP)/packages/resources/devicesettings/res
 
 LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_DEX_PREOPT := true
