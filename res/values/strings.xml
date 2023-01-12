@@ -94,10 +94,6 @@
     <string name="action_messages">Open messages app</string>
     <string name="action_pip">Picture-in-Picture mode</string>
 
-    <!-- Camera gesture -->
-    <string name="camera_gesture_title">Double-twist</string>
-    <string name="camera_gesture_summary">Open camera when using the double twist gesture</string>
-
     <!-- Chop-chop gesture -->
     <string name="chop_chop_gesture_title">Chop-chop</string>
     <string name="chop_chop_gesture_summary">Toggle flashlight when using the chop-chop gesture</string>

@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.LinkedList;
 
 import com.moto.actions.actions.UpdatedStateNotifier;
-import com.moto.actions.actions.CameraActivationSensor;
 import com.moto.actions.actions.ChopChopSensor;
 import com.moto.actions.actions.FlipToMute;
 import com.moto.actions.actions.LiftToSilence;
@@ -76,7 +75,6 @@ public class MotoActionsService extends IntentService implements ScreenStateNoti
         mScreenStateNotifiers.add(new StowSensor(motoActionsSettings, mSensorHelper, mDozePulseAction));
 
         // Other actions that are always enabled
-        mUpdatedStateNotifiers.add(new CameraActivationSensor(motoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ChopChopSensor(motoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ProximitySilencer(motoActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(motoActionsSettings, context, mSensorHelper));

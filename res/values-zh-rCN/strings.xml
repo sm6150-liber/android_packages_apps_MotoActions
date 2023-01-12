@@ -94,10 +94,6 @@
     <string name="action_messages">打开信息应用</string>
     <string name="action_pip">画中画模式</string>
 
-    <!-- Camera gesture -->
-    <string name="camera_gesture_title">快速拍摄</string>
-    <string name="camera_gesture_summary">快速甩动手腕两次，可随时打开相机</string>
-
     <!-- Chop-chop gesture -->
     <string name="chop_chop_gesture_title">快速打开手电筒</string>
     <string name="chop_chop_gesture_summary">切动两次可打开/关闭手电筒</string>
